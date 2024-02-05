@@ -9,11 +9,11 @@ import Login from './Componenets/Login';
 
 const router = createBrowserRouter([
   {
-    path:'/',
+    path:'/bbc-news/',
     element:<Main/>
   },
   {
-    path:'/singin',
+    path:'/bbc-news/singin',
     element:<Login/>
   }
 ])
