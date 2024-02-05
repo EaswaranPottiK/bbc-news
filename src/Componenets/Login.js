@@ -3,12 +3,15 @@ import lb from '../images/loginBackground.png'
 import bbcLogo from '../images/bbcLogo.jpg'
 import {signInWithPopup} from 'firebase/auth'
 import {auth,googleProvider} from '../firebase/setup'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
+  const navigate = useNavigate();
   const googleSignIn = async()=>{
     try{
       await signInWithPopup(auth,googleProvider)
+      auth.currentUser && navigate("/")
     }
     catch(error){
       console.error(error)
